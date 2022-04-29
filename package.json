@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/leerohrer1/better-reminders/issues"
   },
-  "homepage": "https://github.com/leerohrer1/better-reminders#readme"
+  "homepage": "https://github.com/leerohrer1/better-reminders#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
