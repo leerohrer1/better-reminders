@@ -4,10 +4,12 @@ import Occurence from './occurence-class.mjs';
 import readlineSync from 'readline-sync';
 import { join } from 'path';
 
-console.log(`Welcome to your personalized reminders program!
+const programGreeting = () => {
+  console.log(`Welcome to your personalized reminders program!
 
 You can start by looking at your growth domains or the reminders you have set.
 For domains, type "d" and hit enter. For reminders, type "r" and hit enter.\n`);
+}
 
 const startProgram = () => {
   let start = readlineSync.question(`Please enter where you want to start:\n`);
@@ -24,4 +26,5 @@ const showMenu = (menuChoice) => {
   if (menuChoice === 'r') console.log('Reminders:');
 };
 
+programGreeting();
 showMenu(startProgram());
