@@ -1,58 +1,53 @@
-//how will user see the "Set Reminder" option?
-// how can I make sure the constructor params are in correct format
+import Occurence from './occurence-class.mjs';
+
 class Reminder {
-  constructor(reminderName) {
-    this.reminderName = reminderName;
-    this.description = "";
-    this.times;
-    this.continueUntilDate;
-    this.relatedDomains = [];
+  constructor(
+    reminderName,
+    startYear,
+    startMonth,
+    startDate,
+    startHour,
+    startMinute
+  ) {
+    this._reminderName = reminderName;
+    this._description = '';
+    this._occurences = new Occurence(
+      startYear,
+      startMonth,
+      startDate,
+      startHour,
+      startMinute
+    );
   }
 
   get reminderName() {
-    return this.reminderName;
+    return this._reminderName;
   }
 
-   /**
-   * @param {string} newReminderName
-   */
-  set setReminderName(newReminderName) {
-    if (
-      typeof newReminderName === "string" ||
-      newReminderName instanceof String
-    ) {
-      return (this.reminderName = newReminderName);
-    } else {
-      return `${newReminderName} is not a string. Please enter a string.`;
-    }
+  set reminderName(newReminderName) {
+    return (this._reminderName = newReminderName);
   }
 
-  /**
-   * @param {string} descriptionDetails
-   */
+  get description() {
+    return this._description;
+  }
+
   set description(descriptionDetails) {
-    if (
-      typeof descriptionDetails === "string" ||
-      descriptionDetails instanceof String
-    ) {
-      return (this.description = descriptionDetails);
-    } else {
-      return `${descriptionDetails} is not a string. Please enter a string.`;
-    }
+    return (this._description = descriptionDetails);
   }
 
-  addReminderTime(newReminderTime) {
-    return this.times.push(newReminderTime);
+  get occurences() {
+    return this._occurences;
   }
 
-  deleteReminderTime(reminderTimeToDelete) {
-    return this.times.splice(this.times.indexOf(reminderTimeToDelete), 1);
-  }
-
-  logReminderDetails() {
-    console.log(`This reminder is called: "${this.reminderName}" and is decribed as "${this.description}." 
-    The reminder is set for ${this.times}. The reminder will continue until ${this.continueUntilDate}.) 
-    The associated domains are ${this.relatedDomains}.`);
+  changeOccurences(startYear, startMonth, startDate, startHour, startMinute) {
+    return (this._occurences = new Occurence(
+      startYear,
+      startMonth,
+      startDate,
+      startHour,
+      startMinute
+    ));
   }
 }
 

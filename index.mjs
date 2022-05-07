@@ -26,5 +26,5 @@ const showMenu = (menuChoice) => {
   if (menuChoice === 'r') console.log('Reminders:');
 };
 
-programGreeting();
-showMenu(startProgram());
+// programGreeting();
+// showMenu(startProgram());
