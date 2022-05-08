@@ -1,20 +1,18 @@
 import Reminder from './reminder-class.mjs';
-import readlineSync from 'readline-sync';
-import Occurence from './occurence-class.mjs';
 
 class Domain {
-  constructor(domainName) {
-    this._domainName = domainName;
+  constructor(id) {
+    this._id = id;
     this._description = '';
     this._reminders = [];
   }
 
-  get domainName() {
-    return this._domainName;
+  get id() {
+    return this._id;
   }
 
-  set domainName(newDomainName) {
-    return (this._domainName = newDomainName);
+  set id(newId) {
+    return (this._id = newId);
   }
 
   get description() {
@@ -25,28 +23,14 @@ class Domain {
     return (this._description = descriptionDetails);
   }
 
-  addReminder(
-    reminderName,
-    startYear,
-    startMonth,
-    startDate,
-    startHour,
-    startMinute
-  ) {
+  addReminder(id, startYear, startMonth, startDate, startHour, startMinute) {
     return this._reminders.push(
-      new Reminder(
-        reminderName,
-        startYear,
-        startMonth,
-        startDate,
-        startHour,
-        startMinute
-      )
+      new Reminder(id, startYear, startMonth, startDate, startHour, startMinute)
     );
   }
 
-  deleteReminder(reminderName) {
-    return this._reminders = this._reminders.filter((e) => e.reminderName !== reminderName)
+  deleteReminder(id) {
+    return (this._reminders = this._reminders.filter((e) => e.id !== id));
   }
 }
 

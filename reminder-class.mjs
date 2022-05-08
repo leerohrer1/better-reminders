@@ -1,15 +1,8 @@
 import Occurence from './occurence-class.mjs';
 
 class Reminder {
-  constructor(
-    reminderName,
-    startYear,
-    startMonth,
-    startDate,
-    startHour,
-    startMinute
-  ) {
-    this._reminderName = reminderName;
+  constructor(id, startYear, startMonth, startDate, startHour, startMinute) {
+    this._id = id;
     this._description = '';
     this._occurences = new Occurence(
       startYear,
@@ -20,12 +13,12 @@ class Reminder {
     );
   }
 
-  get reminderName() {
-    return this._reminderName;
+  get id() {
+    return this._id;
   }
 
-  set reminderName(newReminderName) {
-    return (this._reminderName = newReminderName);
+  set id(newId) {
+    return (this._id = newId);
   }
 
   get description() {

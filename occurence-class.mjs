@@ -1,6 +1,3 @@
-import Reminder from './reminder-class.mjs';
-import readlineSync from 'readline-sync';
-
 class Occurence {
   constructor(startYear, startMonth, startDate, startHour, startMinute) {
     this._firstOccurence = new Date(
