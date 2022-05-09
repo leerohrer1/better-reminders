@@ -79,7 +79,7 @@ forgiveness.addReminder(
 );
 
 const general = new Domain('General');
-general.addReminder('Be CONFIDENT and WARM. <3', 2022, 5, 10, 18, 0);
+general.addReminder('Be CONFIDENT and WARM. <3', 2022, 5, 10, 18, 30);
 general.addReminder(
   'Follow your values no matter what you feel.',
   2022,
