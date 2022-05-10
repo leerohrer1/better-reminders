@@ -1,17 +1,22 @@
-const changeEndDateForReminder = () => {
+import readlineSync from 'readline-sync';
+
+function inquireAboutEndDateChanges() {
   const options = ['year', 'month', 'date', 'all'];
-  const index = readlineSync.keyInSelect(
+  const selection = readlineSync.keyInSelect(
     options,
     'Which would you like to change?'
   );
+  return selection;
+}
 
-  if (index === 0) {
+function changeEndDate(selection) {
+  if (selection === 0) {
     const year = readlineSync.prompt('What year?');
     this.endingDate.setFullYear(year);
-  } else if (index === 1) {
+  } else if (selection === 1) {
     const month = readlineSync.prompt('What month?');
     this.endingDate.setMonth(month);
-  } else if (index === 2) {
+  } else if (selection === 2) {
     const date = readlineSync.prompt('What date?');
     this.endingDate.setDate(date);
   } else {
@@ -25,9 +30,9 @@ const changeEndDateForReminder = () => {
     this.endingDate.setDate(date);
   }
   return this.endingDate;
-};
+}
 
-const changeFrequencyOfReminder = () => {
+function changeFrequencyOfReminder() {
   const options = ['hourly', 'daily', 'weekly', 'monthly', 'yearly'];
   const index = readlineSync.keyInSelect(
     options,
@@ -36,6 +41,6 @@ const changeFrequencyOfReminder = () => {
   console.log(`The frequency has been set to ${options[index]}.`);
 
   return (this.frequency = options[index]);
-};
+}
 
-export { changeEndDateForReminder, changeFrequencyOfReminder };
+export { inquireAboutEndDateChanges, changeEndDate, changeFrequencyOfReminder };

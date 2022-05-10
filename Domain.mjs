@@ -1,4 +1,4 @@
-import Reminder from './reminder-class.mjs';
+import Reminder from './Reminder.mjs';
 
 class Domain {
   constructor(id) {

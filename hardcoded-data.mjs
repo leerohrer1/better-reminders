@@ -1,4 +1,4 @@
-import Domain from './domain-class.mjs';
+import Domain from './Domain.mjs';
 
 const mindfulness = new Domain('Mindfulness');
 mindfulness.addReminder(
@@ -90,6 +90,5 @@ general.addReminder(
 );
 
 const domains = [mindfulness, acceptance, forgiveness, general];
-console.log()
 
 export default domains;

@@ -1,4 +1,4 @@
-import Occurence from './occurence-class.mjs';
+import Occurence from './Occurence.mjs';
 
 class Reminder {
   constructor(id, startYear, startMonth, startDate, startHour, startMinute) {

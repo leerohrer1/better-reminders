@@ -1,4 +1,40 @@
-const sendReminder = () => {
+
+function displayRemindersByDomain(domainsArray) {
+  domainsArray.forEach((domain) => {
+    console.log(domain._id.toUpperCase());
+    domain._reminders.forEach((reminder) => console.log(reminder.id));
+  });
+}
+
+function displayRemindersByTime(domainsArray) {
+  domainsArray
+    .reduce((a, c) => {
+      a.push(c._reminders);
+      return a;
+    }, [])
+    .flat()
+    .sort((a, b) => {
+      return a._occurences._firstOccurence - b.occurences._firstOccurence;
+    })
+    .forEach((reminder) => {
+      console.log(
+        `${reminder._occurences._firstOccurence.toLocaleString()}, ${reminder._occurences._frequency}: ${
+          reminder.id
+        }`
+      );
+    });
+}
+
+function updateReminderView(selection, domainsArray) {
+  if (selection === 'd') {
+    displayRemindersByDomain(domainsArray);
+  }
+  if (selection === 't') {
+    displayRemindersByTime(domainsArray);
+  }
+}
+
+function sendReminder() {
   let now = new Date();
   let reminderTime = this.occurences.firstOccurence;
   if (this.frequency === 'hourly') {
@@ -28,6 +64,11 @@ const sendReminder = () => {
       reminderTime.setFullYear(reminderTime.getFullYear() + 1);
     }
   }
-};
+}
 
-export { sendReminder };
+export {
+  displayRemindersByDomain,
+  displayRemindersByTime,
+  updateReminderView,
+  sendReminder,
+};

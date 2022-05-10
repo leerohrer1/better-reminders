@@ -1,7 +1,24 @@
-import inquireAboutListViewOptions from './opening-inquiry.mjs';
-import { programGreeting, displayChosenList } from './opening-displays.mjs';
+import domains from './hardcoded-data.mjs';
+import { changeView } from './main-inquiries-general.mjs';
+import {
+  programGreeting,
+  displayChosenList,
+  addSpace,
+} from './main-view-general.mjs';
 
-console.log(`\n\n\n\n\n\n\n\n`);
-programGreeting();
-displayChosenList(inquireAboutListViewOptions());
-console.log(`\n\n\n\n\n\n\n\n`);
+function runProgram() {
+  addSpace();
+  addSpace();
+  programGreeting();
+  let userChoice;
+  while (userChoice !== 7) {
+    userChoice = changeView();
+    displayChosenList(userChoice, domains);
+    addSpace();
+  }
+  addSpace();
+  console.log('See you next time!');
+  addSpace();
+}
+
+runProgram();
