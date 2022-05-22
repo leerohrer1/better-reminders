@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-function changeView() {
+function inputToChangeView() {
   const options = [
     'See the Main Menu',
     'See all growth domains (listed alphabetically)',
@@ -11,11 +11,16 @@ function changeView() {
     'Add or edit reminders',
     'Exit program',
   ];
-  const selection = readlineSync.keyInSelect(
+  const index = readlineSync.keyInSelect(
     options,
     'What would you like to see?\n'
   );
-  return selection;
+  return options[index];
 }
 
-export { changeView };
+function inputToChangeDescription() {
+  let newDescription = readlineSync.question('What would you like the description to be?\n')
+  return newDescription;
+}
+
+export { inputToChangeView, inputToChangeDescription };

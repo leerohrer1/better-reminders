@@ -2,7 +2,7 @@ import Domain from './Domain.mjs';
 
 const mindfulness = new Domain('Mindfulness');
 mindfulness.addReminder(
-  'Tell Dave you need a moment to get on his team.',
+  'Meditate for 5 minutes.',
   2022,
   5,
   10,
@@ -10,7 +10,7 @@ mindfulness.addReminder(
   0
 );
 mindfulness.addReminder(
-  'Stop. Think about your values. Then, speak/act.',
+  'Stop. Think about your values. Then, act.',
   2022,
   5,
   10,
@@ -28,7 +28,7 @@ mindfulness.addReminder(
 
 const acceptance = new Domain('Acceptance');
 acceptance.addReminder(
-  'Acknowledge problems and think about worst case scenarios so you can be proactive.',
+  'Acknowledge problems and solve them!',
   2022,
   5,
   10,
@@ -36,7 +36,7 @@ acceptance.addReminder(
   0
 );
 acceptance.addReminder(
-  'You have everything you need and could dream to have.',
+  'Take a moment to generate gratitude.',
   2022,
   5,
   10,
@@ -44,7 +44,7 @@ acceptance.addReminder(
   0
 );
 acceptance.addReminder(
-  'When David is hurt/angry/dissastisfied, you WANT to help him.',
+  'Helping others can be hard sometimes.',
   2022,
   5,
   10,
@@ -52,7 +52,7 @@ acceptance.addReminder(
   0
 );
 acceptance.addReminder(
-  'Your life is incredible WHEN you keep your VALUES sacred.',
+  'Your life is incredible!',
   2022,
   5,
   10,
@@ -70,7 +70,7 @@ forgiveness.addReminder(
   0
 );
 forgiveness.addReminder(
-  "Don't EVER stop fighting for your family.",
+  "Realign and keep working toward your best life.",
   2022,
   5,
   10,

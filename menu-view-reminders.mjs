@@ -9,10 +9,9 @@ function displayRemindersByDomain(domainsArray) {
 function displayRemindersByTime(domainsArray) {
   domainsArray
     .reduce((a, c) => {
-      a.push(c._reminders);
+      a.push(...c._reminders);
       return a;
     }, [])
-    .flat()
     .sort((a, b) => {
       return a._occurences._firstOccurence - b.occurences._firstOccurence;
     })
